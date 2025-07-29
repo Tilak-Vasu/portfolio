@@ -1,0 +1,14 @@
+/* src/pages/ProjectsPage.css */
+.projects-page h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.projects-page > p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}

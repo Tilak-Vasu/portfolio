@@ -1,0 +1,116 @@
+/* src/components/TodoItem.css */
+
+.todo-item-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid;
+  transition: background-color 0.2s;
+}
+body.light .todo-item-li { border-color: var(--border-light); }
+body.dark .todo-item-li { border-color: var(--border-dark); }
+.todo-item-li:hover {
+  background-color: rgba(0,0,0,0.02);
+}
+body.dark .todo-item-li:hover {
+  background-color: rgba(255,255,255,0.04);
+}
+
+.todo-text {
+  flex-grow: 1;
+  padding-right: 1rem;
+  word-break: break-word;
+}
+
+.todo-item-li.completed .todo-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.edit-form {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.75rem;
+  align-items: center;
+}
+.edit-form input {
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+}
+body.light .edit-form input {
+  color: var(--text-light);
+  border-color: var(--border-light);
+}
+body.dark .edit-form input {
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+.edit-form .save-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-light);
+  color: white;
+}
+body.dark .edit-form .save-btn {
+    background-color: var(--primary-dark);
+    color: var(--background-dark);
+}
+
+/* --- STYLES FOR THE ACTION BUTTONS CONTAINER --- */
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between buttons */
+  flex-shrink: 0; /* Prevent buttons from shrinking on small screens */
+}
+
+/* --- NEW STYLES for Complete and Undo buttons --- */
+.complete-btn, .undo-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.complete-btn {
+  background-color: #22c55e; /* Green for complete */
+  border-color: #16a34a;
+}
+.complete-btn:hover {
+  background-color: #16a34a;
+}
+
+.undo-btn {
+  background-color: #f59e0b; /* Amber/Yellow for undo */
+  border-color: #d97706;
+}
+.undo-btn:hover {
+  background-color: #d97706;
+}
+
+/* --- Style for the icon-based buttons (Edit, Delete) --- */
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.icon-btn:hover {
+  opacity: 1;
+}

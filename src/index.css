@@ -1,0 +1,148 @@
+/* src/index.css */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  
+  /* Light Theme Variables */
+  --background-light: #f4f7f9;
+  --text-light: #1a1a1a;
+  --card-bg-light: #ffffff;
+  --header-bg-light: rgba(255, 255, 255, 0.8);
+  --border-light: #e2e8f0;
+  --primary-light: #3b82f6;
+  --primary-hover-light: #2563eb;
+
+  /* Dark Theme Variables */
+  --background-dark: #1a202c;
+  --text-dark: #e2e8f0;
+  --card-bg-dark: #2d3748;
+  --header-bg-dark: rgba(26, 32, 44, 0.8);
+  --border-dark: #4a5568;
+  --primary-dark: #60a5fa;
+  --primary-hover-dark: #3b82f6;
+}
+
+/* --- NEW: Add this rule for a full-height foundation --- */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* General component styles */
+.card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+body.light .card {
+  background-color: var(--card-bg-light);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+  border: 1px solid var(--border-light);
+}
+
+body.dark .card {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.3),0 2px 4px -2px rgba(0,0,0,.2);
+  border: 1px solid var(--border-dark);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+body.light button.primary {
+  background-color: var(--primary-light);
+  color: white;
+}
+body.light button.primary:hover {
+  background-color: var(--primary-hover-light);
+}
+
+body.dark button.primary {
+  background-color: var(--primary-dark);
+  color: var(--background-dark);
+}
+body.dark button.primary:hover {
+  background-color: var(--primary-hover-dark);
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+body.light input, body.light textarea {
+    background-color: var(--card-bg-light);
+    color: var(--text-light);
+    border-color: var(--border-light);
+}
+
+body.dark input, body.dark textarea {
+    background-color: var(--card-bg-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+
+/*
+  ==========================================
+  --- GLOBAL LAYOUT & STICKY FOOTER FIX ---
+  ==========================================
+*/
+
+/* 1. Configure the main app container to use Flexbox */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Use min-height to allow content to grow taller than the screen */
+}
+
+/* 2. Style the main content area */
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 80px; /* Your existing top padding */
+
+  /* ✅ THE FIX: Added padding-bottom to push the footer down */
+  /* padding-bottom: 10rem; Adjust this value as needed */
+
+  /* Your existing side padding */
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    /* Adjust padding for smaller screens */
+  padding: 80px 2rem 2rem;
+  }
+}

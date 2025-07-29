@@ -1,0 +1,114 @@
+/* src/components/WeatherWidget.css */
+
+.weather-widget {
+  /* --- KEY CHANGES --- */
+  width: 320px; /* A fixed width is better for this kind of widget */
+  max-width: 100%; /* Ensures it shrinks on very small screens if needed */
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  background-color: white;
+}
+
+body.dark .weather-widget {
+  background-color: #1e293b; /* Dark card background */
+  border-color: #334155;
+}
+
+/* --- Location Input Form --- */
+.location-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.location-input {
+  flex-grow: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+body.dark .location-input {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.location-button {
+  padding: 0.6rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.location-button:hover {
+  background-color: #2563eb;
+}
+
+/* --- Weather Display --- */
+.weather-content-area {
+  text-align: center;
+}
+
+.weather-content-area h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.weather-main {
+  margin-bottom: 1rem;
+}
+
+.temperature {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+  display: block;
+}
+
+.description {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  color: #64748b;
+}
+
+body.dark .description {
+  color: #94a3b8;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+  color: #475569;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+body.dark .weather-details {
+  color: #94a3b8;
+  border-top-color: #334155;
+}
+
+.widget-error-notice,
+.widget-status-notice {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+body.dark .widget-status-notice {
+  color: #94a3b8;
+}
+
+.widget-error-notice {
+  color: #ef4444; /* Red for errors */
+}

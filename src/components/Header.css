@@ -1,0 +1,82 @@
+/* src/components/Header.css */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  /* This will now correctly push the nav and the toggle to opposite ends */
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 2rem; /* The padding ensures the button is not stuck to the edge */
+  height: 60px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box; /* Good practice to include this */
+}
+
+/* ... the rest of your CSS remains the same ... */
+
+body.light .app-header {
+  background-color: var(--header-bg-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark .app-header {
+  background-color: var(--header-bg-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+body.light .header-nav a { color: var(--text-light); }
+body.dark .header-nav a { color: var(--text-dark); }
+
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+body.light .header-nav a::after { background-color: var(--primary-light); }
+body.dark .header-nav a::after { background-color: var(--primary-dark); }
+
+.header-nav a:hover::after,
+.header-nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.header-nav a.active {
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 1rem; /* Adjust padding for mobile */
+  }
+  .header-nav {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

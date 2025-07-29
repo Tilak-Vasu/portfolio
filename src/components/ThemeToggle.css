@@ -1,0 +1,92 @@
+/* src/components/ThemeToggle.css */
+
+/* The main container for the switch */
+.theme-toggle-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 60px;
+  padding: 4px;
+  border-radius: 999px; /* Pill shape */
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Color styles for Light Mode */
+body.light .theme-toggle-switch {
+  background-color: #e2e8f0; /* Light gray track */
+  border-color: #cbd5e1;
+}
+
+/* Color styles for Dark Mode */
+body.dark .theme-toggle-switch {
+  background-color: #334155; /* Dark gray track */
+  border-color: #475569;
+}
+
+/* --- UPDATED THUMB --- */
+/* The sliding circle (the thumb) */
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Make the thumb a flex container to center the icon inside it */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Move the thumb to the right in dark mode */
+body.dark .switch-thumb {
+  transform: translateX(28px);
+}
+
+/* --- UPDATED ICON --- */
+/* The container for the sun/moon icons */
+.icon {
+  /* Icons now stack on top of each other inside the thumb */
+  position: absolute; 
+  
+  /* Center the content (the emoji) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* The icon container should fill its parent (the thumb) */
+  width: 100%;
+  height: 100%;
+  
+  /* Use font-size to control the size of your emoji icons */
+  font-size: 16px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* In Light mode, show the sun and hide the moon */
+body.light .icon.sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+body.light .icon.moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+/* In Dark mode, hide the sun and show the moon */
+body.dark .icon.sun {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+body.dark .icon.moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}

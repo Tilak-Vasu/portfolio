@@ -1,0 +1,60 @@
+/* src/components/Footer.css */
+
+.app-footer {
+  /*
+    The footer's position is now controlled by the flexbox container in index.css.
+    We removed `position: relative` as it's not needed for this solution.
+  */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  
+  /* Styling */
+  padding: 1.5rem 2rem;
+  border-top: 1px solid;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+body.light .app-footer {
+    border-color: var(--border-light);
+    color: #666;
+}
+body.dark .app-footer {
+    border-color: var(--border-dark);
+    color: #a0aec0;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+body.light .social-links svg {
+  fill: #4a5568;
+}
+body.dark .social-links svg {
+  fill: #cbd5e1;
+}

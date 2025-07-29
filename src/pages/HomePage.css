@@ -1,0 +1,160 @@
+/* src/pages/HomePage.css */
+
+/* === MAIN CONTAINERS === */
+.home-page-container {
+  width: 100%;
+}
+
+.home-hero-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* === DESKTOP LAYOUT (default state) === */
+.hero-content-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  max-width: 1400px; /* ✅ INCREASED for more overall space */
+  width: 100%;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Photo Styles */
+.profile-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 400px;
+  height: 370px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid white;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Text & Info Styles */
+.profile-info-wrapper {
+  flex: 1;
+  max-width: 900px; /* ✅ INCREASED for longer lines */
+}
+
+.profile-name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.home-about-summary p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.home-about-summary .highlight, .read-more-link {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
+.cta-container {
+  margin-top: 2rem;
+}
+
+.cta-container .primary {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.cta-container .primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Weather Widget Wrapper */
+.home-weather-widget-wrapper {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+/* === DARK MODE STYLES === */
+body.dark .profile-photo { border-color: #334155; }
+body.dark .profile-name { color: #f9fafb; }
+body.dark .profile-title { color: #cbd5e1; }
+body.dark .home-about-summary p { color: #d1d5db; }
+body.dark .home-about-summary .highlight, body.dark .read-more-link { color: #60a5fa; }
+body.dark .cta-container .primary { background-color: #3b82f6; }
+body.dark .cta-container .primary:hover { background-color: #2563eb; }
+
+/* === MOBILE RESPONSIVE STYLES === */
+@media (max-width: 950px) {
+  .hero-content-main {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem 1rem; /* Adjusted padding for mobile */
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-name {
+    font-size: 2.2rem;
+  }
+
+  .profile-info-wrapper {
+    max-width: 100%; /* Makes text fluid on mobile */
+    text-align: center;
+  }
+
+  .home-weather-widget-wrapper {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* === FADE-IN ANIMATIONS === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeInUp 0.7s ease-out forwards; opacity: 0; }
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.2s; }
+.fade-in-delay-3 { animation-delay: 0.3s; }

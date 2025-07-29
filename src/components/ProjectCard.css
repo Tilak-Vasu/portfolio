@@ -1,0 +1,43 @@
+/* src/components/ProjectCard.css */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card .tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.project-card .tech-tag {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 15px;
+}
+
+body.light .project-card .tech-tag {
+  background-color: #edf2f7;
+  color: #4a5568;
+}
+
+body.dark .project-card .tech-tag {
+  background-color: #4a5568;
+  color: #e2e8f0;
+}
+
+
+.project-link {
+  margin-top: auto; /* Pushes the link to the bottom */
+  padding-top: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: flex-start;
+}
+body.light .project-link { color: var(--primary-light); }
+body.dark .project-link { color: var(--primary-dark); }

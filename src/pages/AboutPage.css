@@ -1,0 +1,53 @@
+/* src/pages/AboutPage.css */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-photo {
+  width: 300px;
+  height: 200px;
+  border-radius: 70%;
+  object-fit: cover;
+}
+
+.bio {
+  line-height: 1.6;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+body.light .tech-tag {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+body.dark .tech-tag {
+  background-color: #4a5568;
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
